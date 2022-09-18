@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import { Color, Icon, getPreferenceValues, ActionPanel, List } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { TopQueries, domainDetails } from "./interfaces";
@@ -25,11 +24,14 @@ export default function () {
             domainURL: Object.keys(top_queries)[i],
             blockCount: Object.values(top_queries)[i].toString(),
           } as domainDetails);
+        }
+        for (let i = 0; i < Object.keys(top_ads).length; i++) {
           top_ads_array.push({
             domainURL: Object.keys(top_ads)[i],
             blockCount: Object.values(top_ads)[i].toString(),
           } as domainDetails);
         }
+
         updateTopQueries(top_queries_array);
         updateTopAds(top_ads_array);
         updateTimeoutInfo("no-timeout");
