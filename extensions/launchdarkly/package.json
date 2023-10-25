@@ -17,8 +17,18 @@
       "mode": "view"
     }
   ],
+  "preferences": [
+    {
+      "name": "access-token",
+      "description": "Your LaunchDarkly access token",
+      "type": "textfield",
+      "required": true,
+      "title": "Enter your LaunchDarkly access token"
+    }
+  ],
   "dependencies": {
-    "@raycast/api": "^1.60.1"
+    "@raycast/api": "^1.60.1",
+    "@raycast/utils": "^1.10.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.6",
