@@ -27,11 +27,30 @@ export interface ItemsItem {
   archived?: boolean;
   archivedDate?: number;
   defaults?: Defaults;
-  environments: string[];
+  environments: EnvironmentArrayLike<EnvironmentItem>;
   //   metricKey?: string;
   //   _metric?: _metric;
   //   _environmentSettings?: _environmentSettings;
 }
+
+export interface EnvironmentArrayLike<EnvironmentItem> {
+  [key: string]: EnvironmentItem;
+}
+
+interface EnvironmentItem {
+  _environmentName: string;
+  _site: _site;
+  _summary: _summary;
+  archived: boolean;
+  lastModified: number;
+  on: boolean;
+  salt: string;
+  sel: string;
+  trackEvents: boolean;
+  trackEventsFallthrough: boolean;
+  version: number;
+}
+
 export interface ClientSideAvailability {
   usingMobileKey: boolean;
   usingEnvironmentId: boolean;
